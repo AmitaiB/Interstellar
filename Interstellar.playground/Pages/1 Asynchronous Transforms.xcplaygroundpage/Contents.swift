@@ -15,7 +15,7 @@ func greet(name: String) -> Observable<String> {
 let name = Observable("World")
 
 let nestedGreeting: Observable<Observable<String>> = name.map(greet)
-//: This is most probably not what your want. Use `flatMap` instead:
+//: This is most probably not what you want. Use `flatMap` instead:
 let greeting: Observable<String> = name.flatMap(greet)
 
 greeting.subscribe { print($0) }
